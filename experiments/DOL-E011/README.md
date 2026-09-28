@@ -1,7 +1,7 @@
 # DOL-E011 — Synthetic rule induction on held-out representations
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — PASS**
 
 ## Complexity target
 **L7 — Reasoning**
