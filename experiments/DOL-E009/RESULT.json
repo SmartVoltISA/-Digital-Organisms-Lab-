@@ -1,0 +1,18 @@
+{
+  "id":"DOL-E009",
+  "status":"EXECUTED",
+  "decision":"INCONCLUSIVE",
+  "n":1000,
+  "seed":9009,
+  "observed":{
+    "planning_mean_return":0.0,
+    "planning_B_first_fraction":1.0,
+    "planning_goal_fraction":1.0,
+    "myopic_mean_return":1.0,
+    "myopic_B_first_fraction":0.0,
+    "myopic_goal_fraction":0.0,
+    "random_mean_return":0.477
+  },
+  "protocol_issue":"The preregistered horizon is 3, but the registered transition gives +4 only on an action taken from GOAL. The planning path reaches GOAL on the third transition and therefore cannot collect the +4 reward within a 3-step episode.",
+  "decision_basis":"The execution cannot test the registered planning-return criterion as written. No parameters were changed after observing the result. A corrected protocol must be a new experiment."
+}
