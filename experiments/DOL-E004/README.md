@@ -17,8 +17,8 @@ Can a minimal dynamical organism adapt to repeated environmental conditions with
 Internal state x, adaptive state a, environment e, output y.
 
 x[t+1] = 0.8*x[t] + 0.6*e[t] - 0.4*a[t]
-a[t+1] = 0.98*a[t] + 0.08*clip(abs(e[t]) - 0.5, 0, 1)
-y[t] = x[t] - 0.5*a[t]
+a[t+1] = 0.98*a[t] + 0.08*clip(e[t], -1, 1)
+y[t] = x[t] + 0.4*a[t]
 
 The adaptive state changes slowly and can persist after the immediate stimulus ends. Parameters are locked before execution.
 
@@ -53,3 +53,5 @@ PASS establishes only an operational L3 adaptation property in this specified sy
 
 FACT → CHECK → RESULT → DECISION → FIXATION.
 Failed runs remain in the experiment history.
+
+The pre-training probe is a fixed 10-step input e=0.5 before training. The post-training and post-reversal probes use the identical e=0.5 input. Reversal is measured as the increase from the adapted post-training response; the preregistered threshold is in config.json.
