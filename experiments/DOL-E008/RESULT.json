@@ -1,0 +1,22 @@
+{
+  "id":"DOL-E008",
+  "status":"EXECUTED",
+  "decision":"PASS",
+  "n":2000,
+  "seed":8008,
+  "results":{
+    "goal_policy_mean_improvement":0.9843018938484878,
+    "random_policy_mean_improvement":-0.00023908302953384376,
+    "control_gap":0.9845409768780216,
+    "anti_goal_mean_improvement":-1.0012524971301766,
+    "maximal_choice_fraction":1.0
+  },
+  "criteria":{
+    "primary_mean_improvement_pass":true,
+    "maximal_choice_fraction_pass":true,
+    "control_gap_pass":true,
+    "anti_goal_negative_pass":true
+  },
+  "protocol_deviation":"The preregistration contains a held_out_goal_states control field, but this was not separately operationalized as a train/test split because the tested policy has no fitted parameters. The deviation does not affect any preregistered decision criterion.",
+  "interpretation":"The preregistered synthetic system selects one-step actions that maximize a predefined objective across alternatives. This is operational L5 evidence only and does not establish planning, reasoning, self-model, intelligence, cognition, or biological equivalence."
+}
