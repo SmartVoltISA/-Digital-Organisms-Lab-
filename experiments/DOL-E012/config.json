@@ -1,6 +1,6 @@
 {
   "id":"DOL-E012",
-  "status":"PREREGISTERED_NOT_RUN",
+  "status":"METHOD_CHECK_NOT_EXECUTED",
   "level":"L8",
   "purpose":"Test whether a learned model of the system's own next-state dynamics improves held-out control compared with matched controls that do not use self-state prediction.",
   "system":{
