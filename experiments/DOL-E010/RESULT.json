@@ -1,0 +1,21 @@
+{
+  "id":"DOL-E010",
+  "status":"EXECUTED",
+  "decision":"PASS",
+  "n":1000,
+  "seed":9010,
+  "results":{
+    "planning":{"mean_return":8.0,"B_first_fraction":1.0,"goal_fraction":1.0},
+    "myopic":{"mean_return":1.0,"B_first_fraction":0.0,"goal_fraction":0.0},
+    "random":{"mean_return":1.729,"B_first_fraction":0.311,"goal_fraction":0.226}
+  },
+  "planning_gap":7.0,
+  "criteria":{
+    "planning_return_pass":true,
+    "planning_gap_pass":true,
+    "planning_B_fraction_pass":true,
+    "myopic_B_fraction_pass":true,
+    "planning_goal_reach_pass":true
+  },
+  "interpretation":"The preregistered planner selects the future-dependent action sequence and outperforms the matched myopic controller on the registered horizon. This is operational L6 evidence only."
+}
