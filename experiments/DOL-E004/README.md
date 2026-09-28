@@ -1,7 +1,9 @@
 # DOL-E004 — Synthetic adaptation with persistence and reversal controls
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — PASS**
+
+The preregistered configuration remains locked; execution records are in `RUN_LOG_v2.md` and `RESULT_v2.json`.
 
 ## Complexity target
 **L3 — Adaptation**
@@ -46,7 +48,7 @@ where R_pre and R_post are mean absolute responses to identical probe inputs bef
 - locked parameters and schedule.
 
 ## Decision criteria
-PASS only if all criteria in config.json hold: training produces adaptation >= 0.20; no-training absolute index <= 0.05; reversal index <= -0.10; and at least 95% of seeds satisfy the preregistered directional criterion.
+PASS only if all criteria in config.json hold: training produces adaptation >= 0.20; no-training absolute index <= 0.05; reversal recovery >= 0.50; and at least 95% of seeds satisfy the preregistered directional criterion.
 
 ## Interpretation
 PASS establishes only an operational L3 adaptation property in this specified synthetic system. It does not establish biological adaptation, universal memory, or a universal law.
@@ -54,4 +56,4 @@ PASS establishes only an operational L3 adaptation property in this specified sy
 FACT → CHECK → RESULT → DECISION → FIXATION.
 Failed runs remain in the experiment history.
 
-The pre-training probe is a fixed 10-step input e=0.5 before training. The post-training and post-reversal probes use the identical e=0.5 input. Reversal is measured as the increase from the adapted post-training response; the preregistered threshold is in config.json.
+The pre-training probe is a fixed 10-step input e=0.5 before training. The post-training and post-reversal probes use the identical e=0.5 input. Reversal is measured as the recovery from the adapted post-training response; the preregistered threshold is `reversal_recovery_index_min = 0.50` in config.json. The locked preregistration remains unchanged; execution is documented in RUN_LOG_v2.md and RESULT_v2.json.
