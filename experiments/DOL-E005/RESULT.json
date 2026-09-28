@@ -1,0 +1,35 @@
+{
+  "id": "DOL-E005",
+  "status": "EXECUTED",
+  "decision": "FAIL",
+  "n": 100,
+  "seed_range": "1000-1099",
+  "mean_R_A": 0.08630022804219059,
+  "mean_R_B": 0.08169504249795258,
+  "mean_memory_effect": 0.00460518554423805,
+  "fraction_R_A_gt_R_B": 1,
+  "mean_erase_residual_ratio": 0,
+  "mean_sham_ratio": 0,
+  "memory_effect_q05_q50_q95": [
+    0.004605185544238027,
+    0.004605185544238055,
+    0.004605185544238069
+  ],
+  "erase_ratio_q05_q50_q95": [
+    0,
+    0,
+    0
+  ],
+  "sham_ratio_q05_q50_q95": [
+    0,
+    0,
+    0
+  ],
+  "checks": {
+    "memory_effect": false,
+    "direction": true,
+    "erase": true,
+    "sham": true
+  },
+  "interpretation": "The direction is perfectly reproducible, and erasure removes it, but the preregistered effect-size threshold is not met. L4 is therefore not established by this experiment."
+}
