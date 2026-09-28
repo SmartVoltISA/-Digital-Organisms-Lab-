@@ -1,0 +1,29 @@
+{
+  "id":"DOL-E011",
+  "status":"EXECUTED",
+  "decision":"PASS",
+  "tasks":1000,
+  "test_cases":5000,
+  "results":{
+    "reasoner_accuracy":1.0,
+    "lookup_accuracy":0.002,
+    "random_accuracy":0.2092,
+    "all_five_correct_task_fraction":1.0,
+    "control_gap":0.998,
+    "per_rule":{
+      "identity":{"tasks":144,"accuracy":1.0},
+      "rotate90":{"tasks":161,"accuracy":1.0},
+      "rotate180":{"tasks":187,"accuracy":1.0},
+      "mirror_horizontal":{"tasks":168,"accuracy":1.0},
+      "mirror_vertical":{"tasks":162,"accuracy":1.0},
+      "invert":{"tasks":178,"accuracy":1.0}
+    }
+  },
+  "criteria":{
+    "reasoner_accuracy_pass":true,
+    "all_test_correct_pass":true,
+    "control_gap_pass":true,
+    "lookup_max_pass":true
+  },
+  "interpretation":"The preregistered synthetic system infers a transformation rule from training representations and applies it to held-out inputs. This is operational L7 evidence only; it does not establish general reasoning, intelligence, cognition, self-model, biological equivalence, or universality."
+}
