@@ -9,3 +9,4 @@
 - DOL-E003 — c302 AIZL↔ASHL reversible electrical relation ablation; preregistered, not yet run.
 
 - DOL-E004 — synthetic L3 adaptation with persistence and reversal controls; executed, PASS. Corrected execution record: `experiments/DOL-E004/RESULT_v2.json`.
+\n- DOL-E005 — synthetic L4 memory under matched present state; executed, FAIL (effect-size criterion not met).\n
