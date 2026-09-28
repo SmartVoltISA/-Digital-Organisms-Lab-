@@ -1,0 +1,25 @@
+{
+  "id":"DOL-E015",
+  "status":"EXECUTED",
+  "decision":"PASS",
+  "n":1000,
+  "results":{
+    "learned_gain":0.5268610523963687,
+    "accuracy":{
+      "self":1.0,
+      "reactive":0.5,
+      "damaged":0.0,
+      "oracle":1.0
+    },
+    "self_model_gap":0.5,
+    "causal_drop":1.0,
+    "prediction_rmse":0.01914518588508577
+  },
+  "criteria":{
+    "self_model_accuracy_pass":true,
+    "accuracy_gap_pass":true,
+    "causal_drop_pass":true,
+    "prediction_rmse_pass":true
+  },
+  "interpretation":"The preregistered organism-specific self-model correctly selects held-out actions at the decision boundary, outperforms the fixed reactive baseline, and loses its advantage when its learned organism-specific parameter is replaced by an incorrect generic parameter. This is operational L8 evidence only."
+}
