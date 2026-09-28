@@ -10,3 +10,4 @@
 
 - DOL-E004 — synthetic L3 adaptation with persistence and reversal controls; executed, PASS. Corrected execution record: `experiments/DOL-E004/RESULT_v2.json`.
 \n- DOL-E005 — synthetic L4 memory under matched present state; executed, FAIL (effect-size criterion not met).\n
+- DOL-E006 — synthetic L4 memory persistence curve; executed, FAIL (effect threshold not met; monotonic persistence observed).
