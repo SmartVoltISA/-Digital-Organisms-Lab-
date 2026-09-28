@@ -1,7 +1,7 @@
 # DOL-E008 — Synthetic goal-directed action selection
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — PASS**
 
 ## Complexity target
 **L5 — Goal-directed behavior**
@@ -37,7 +37,8 @@ PASS requires:
 - goal-policy improvement exceeds random-policy improvement by >=0.40;
 - anti-goal control has negative mean objective improvement.
 
-## Interpretation
+## Execution note
+The execution result is fixed in `RESULT.json`; this README status reflects the completed run.\n\n## Interpretation
 A PASS establishes the tested operational property: the synthetic system selects actions that improve a pre-defined objective under alternatives.
 
 It does not establish planning, reasoning, self-model, intelligence, cognition, consciousness, biological equivalence, or universality.
