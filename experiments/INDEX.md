@@ -1,10 +1,11 @@
 # Experiments
 
-Все эксперименты получают ID: DOL-E001, DOL-E002 ...
+Все эксперименты получают ID: DOL-E000, DOL-E001, DOL-E002 ...
 
 Для каждого эксперимента фиксируются hypothesis, config, run log, result и README.
 
 Результаты не редактируются задним числом. Исправления создают новую версию.
+- DOL-E000 — engineering baseline; executed as local reproducibility baseline; not a biological result.
 
 - DOL-E003 — c302 AIZL↔ASHL reversible electrical relation ablation; preregistered, not yet run.
 
