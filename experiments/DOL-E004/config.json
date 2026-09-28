@@ -4,8 +4,9 @@
   "level": "L3",
   "model": {
     "x_next": "0.8*x + 0.6*e - 0.4*a",
-    "a_next": "0.98*a + 0.08*clip(abs(e)-0.5,0,1)",
-    "y": "x - 0.5*a"
+    "a_next": "0.98*a + 0.08*clip(e,-1,1)",
+    "y": "x + 0.4*a",
+    "noise_sd": 0.005
   },
   "schedule": {
     "baseline": {
@@ -39,6 +40,10 @@
     "post_reversal_probe": {
       "steps": 10,
       "environment": 0.5
+    },
+    "pre_probe": {
+      "steps": 10,
+      "environment": 0.5
     }
   },
   "seeds": {
@@ -48,7 +53,14 @@
   "criteria": {
     "adaptation_index_min": 0.2,
     "no_training_abs_index_max": 0.05,
-    "reversal_index_max": -0.1,
+    "reversal_recovery_index_min": 0.5,
     "per_seed_direction_fraction_min": 0.95
+  },
+  "metrics": {
+    "primary": "(R_pre-R_post)/max(R_pre,epsilon)",
+    "R_pre": "mean(abs(y) during pre-training probe)",
+    "R_post": "mean(abs(y) during post-training probe)",
+    "R_reversal": "mean(abs(y) during post-reversal probe)",
+    "reversal_recovery": "(R_reversal-R_post)/max(R_post,epsilon)"
   }
 }
