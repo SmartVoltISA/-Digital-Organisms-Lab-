@@ -1,0 +1,8 @@
+{
+  "experiment_id": "DOL-E000",
+  "model": "examples/minimal_organism.py",
+  "seed": 0,
+  "steps": 100,
+  "environment": {"food": 1.0},
+  "metrics": ["final_position", "final_energy", "steps"]
+}
