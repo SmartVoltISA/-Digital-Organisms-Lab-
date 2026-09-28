@@ -1,6 +1,6 @@
 {
   "id": "DOL-E007",
-  "status": "PREREGISTERED_NOT_RUN",
+  "status": "EXECUTED_PASS",
   "level": "L4",
   "purpose": "Test whether the existing synthetic memory mechanism produces a reproducible history-dependent behavioral difference without using an arbitrary absolute response-unit threshold.",
   "model": {
