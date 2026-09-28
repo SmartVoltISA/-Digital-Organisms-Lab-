@@ -1,0 +1,30 @@
+{
+  "id":"DOL-E015",
+  "status":"PREREGISTERED_NOT_RUN",
+  "level":"L8",
+  "purpose":"Test whether an organism-specific learned actuator model improves held-out action selection at states where the correct action depends on the organism's own dynamics.",
+  "organism":{"latent_parameter":"actuator_gain g=0.55","actions":[0,1],"noise_sd":0.02,"transition":"e_next = clip(e + g*a - 0.1 + noise, 0, 10)"},
+  "objective":"reward = -abs(e_next-5) - 0.30*a",
+  "training":{"episodes":300,"steps_per_episode":20,"initial_energy_values":[3.0,4.0,5.0,6.0,7.0],"random_actions":true},
+  "held_out":{"episodes_per_state":250,"states":[4.40,4.45,4.50,4.55],"disjoint_from_training":true},
+  "policies":{
+    "self_model":"estimate organism-specific gain g_hat from training transitions; for each held-out state choose the action maximizing predicted reward",
+    "reactive":"fixed state-only threshold: choose action 1 if e<4.475, otherwise 0; no learned dynamics",
+    "damaged_self_model":"same learned policy but replace g_hat with registered generic gain 1.00",
+    "oracle":"use true gain g=0.55"
+  },
+  "controls":{"same_held_out_states":true,"same_noise_sequences":true,"organism_specific_parameter":true,"held_out_states":true,"model_damage_intervention":true},
+  "metrics":{
+    "primary":"held-out action-selection accuracy against oracle-optimal action",
+    "secondary":"self_model_accuracy_gap_vs_reactive",
+    "causal_drop":"intact_self_model_accuracy - damaged_self_model_accuracy",
+    "prediction_rmse":"one-step prediction RMSE on held-out transitions"
+  },
+  "criteria":{
+    "self_model_accuracy_min":0.90,
+    "accuracy_gap_min":0.40,
+    "causal_drop_min":0.40,
+    "prediction_rmse_max":0.05
+  },
+  "interpretation_rule":"PASS establishes only the registered operational property that an organism-specific model of its own action-state dynamics improves held-out control/action selection and that damaging that model removes the advantage. It does not establish consciousness, subjective self-awareness, general self-knowledge, intelligence, or universality."
+}
