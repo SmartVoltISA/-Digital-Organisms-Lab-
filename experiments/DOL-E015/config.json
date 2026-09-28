@@ -1,6 +1,6 @@
 {
   "id":"DOL-E015",
-  "status":"PREREGISTERED_NOT_RUN",
+  "status":"EXECUTED_PASS",
   "level":"L8",
   "purpose":"Test whether an organism-specific learned actuator model improves held-out action selection at states where the correct action depends on the organism's own dynamics.",
   "organism":{"latent_parameter":"actuator_gain g=0.55","actions":[0,1],"noise_sd":0.02,"transition":"e_next = clip(e + g*a - 0.1 + noise, 0, 10)"},
