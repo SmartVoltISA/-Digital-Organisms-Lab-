@@ -1,7 +1,7 @@
 # DOL-E013 — Self-model under matched disturbances
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — FAIL**
 
 ## Complexity target
 **L8 — Self-model**
