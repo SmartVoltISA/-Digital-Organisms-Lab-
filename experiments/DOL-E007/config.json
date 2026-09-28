@@ -1,0 +1,44 @@
+{
+  "id": "DOL-E007",
+  "status": "PREREGISTERED_NOT_RUN",
+  "level": "L4",
+  "purpose": "Test whether the existing synthetic memory mechanism produces a reproducible history-dependent behavioral difference without using an arbitrary absolute response-unit threshold.",
+  "model": {
+    "x_next": "0.05*x + 0.4*e + 0.005*m",
+    "m_next": "0.995*m + 0.05*clip(e,-1,1)",
+    "y": "x",
+    "noise_sd": 0.0001
+  },
+  "schedule": {
+    "baseline_steps": 50,
+    "cue_steps": 20,
+    "washout_steps": 0,
+    "probe_steps": 10,
+    "cue_A": 1,
+    "cue_B": -1,
+    "probe_environment": 0.2
+  },
+  "controls": {
+    "alignment": "set x=0 before probe; do not modify m",
+    "erase": "set x=0,m=0 before probe",
+    "sham": "cue e=0 for same duration, then same probe",
+    "matched_noise": true
+  },
+  "seeds": {
+    "start": 2000,
+    "count": 100
+  },
+  "metrics": {
+    "primary": "paired difference D_i = R_A_i - R_B_i",
+    "secondary": "scale_free_contrast_i = 2*abs(R_A_i-R_B_i)/max(R_A_i+R_B_i, epsilon)",
+    "direction_fraction": "fraction of seeds with D_i > 0"
+  },
+  "criteria": {
+    "primary": "one-sided paired sign test H0:P(D>0)<=0.5 rejected at alpha=0.01 AND bootstrap 95% CI for mean(D) excludes 0 on the positive side",
+    "direction_fraction_min": 0.95,
+    "erase_residual_ratio_max": 0.10,
+    "sham_ratio_max": 0.10,
+    "secondary_reporting_only": "scale_free_contrast is reported as an effect-size description and is not used alone to award L4"
+  },
+  "interpretation_rule": "A PASS establishes only that the preregistered synthetic system exhibits reproducible history-dependent behavior under matched present observable state. It does not by itself establish biological memory, cognition, universality, or any higher complexity level."
+}
