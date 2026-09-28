@@ -1,0 +1,41 @@
+{
+  "id": "DOL-E008",
+  "status": "PREREGISTERED_NOT_RUN",
+  "level": "L5",
+  "purpose": "Test one-step goal-directed action selection against matched action alternatives.",
+  "model": {
+    "state": "s",
+    "goal": "g",
+    "actions": [-1, 0, 1],
+    "transition": "s_next = clip(s + a + noise, -10, 10)",
+    "noise_sd": 0.05,
+    "objective": "J(s,g) = -abs(s-g)"
+  },
+  "protocol": {
+    "episodes": 100,
+    "steps_per_episode": 20,
+    "goal_values": [-4, -2, 2, 4],
+    "initial_states": [-3, -1, 1, 3],
+    "action_candidates": [-1, 0, 1],
+    "objective_evaluation": "evaluate J(s_next,g) for every candidate action using the same state, goal and noise realization",
+    "selection_rule": "choose action with maximal predicted J; ties resolved by smallest absolute action"
+  },
+  "controls": {
+    "random_policy": "uniform random action from candidates",
+    "anti_goal_control": "choose action maximizing distance from g",
+    "matched_noise": true,
+    "held_out_goal_states": true
+  },
+  "metrics": {
+    "primary": "mean objective improvement J(s_next,g)-J(s,g)",
+    "secondary": "fraction of decisions with maximal available objective among candidates",
+    "control_gap": "goal_policy_primary - random_policy_primary"
+  },
+  "criteria": {
+    "primary_mean_improvement_min": 0.50,
+    "maximal_choice_fraction_min": 0.90,
+    "control_gap_min": 0.40,
+    "anti_goal_objective_negative": true
+  },
+  "interpretation_rule": "PASS establishes only one-step goal-directed action selection in this synthetic system. It does not establish planning, reasoning, self-model, intelligence, cognition, or biological equivalence."
+}
