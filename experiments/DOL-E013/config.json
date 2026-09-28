@@ -1,0 +1,19 @@
+{
+  "id":"DOL-E013",
+  "status":"PREREGISTERED_NOT_RUN",
+  "level":"L8",
+  "purpose":"Test whether a learned model of the system's own next-state dynamics improves held-out control against a matched reactive controller under identical disturbances.",
+  "system":{"state":"energy e in [0,10]","actions":[-1,0,1],"dynamics":"e_next = clip(e + 0.8*a - 0.3 + drift + noise, 0, 10)","noise_sd":0.05,"drift_values":[-0.2,0.2]},
+  "objective":"reward = -abs(e_next-5) - 0.1*abs(a)",
+  "training":{"episodes":200,"steps_per_episode":20,"drift":0.2,"initial_energy":5.0},
+  "held_out":{"episodes":1000,"steps_per_episode":20,"drift":-0.2,"initial_energy_values":[2,4,6,8]},
+  "policies":{
+    "self_model":"fit linear next-state model e_next = beta0 + beta1*e + beta2*a from training trajectories; choose action maximizing predicted reward",
+    "reactive":"choose action from current e only using fixed threshold controller: +1 if e<4.5, -1 if e>5.5, else 0",
+    "oracle":"choose action using true transition model and the current held-out disturbance; positive control only"
+  },
+  "controls":{"same_initial_states":true,"same_noise_sequences_between_self_and_reactive":true,"held_out_drift":true,"held_out_initial_energy":true,"oracle_positive_control":true},
+  "metrics":{"primary":"mean held-out reward per step","secondary":"self_model_gap","prediction_rmse":"RMSE of self-model one-step prediction on held-out self-policy transitions"},
+  "criteria":{"self_model_reward_min":-1.0,"self_model_gap_min":0.20,"prediction_rmse_max":0.35,"oracle_gap_max":0.50},
+  "interpretation_rule":"PASS establishes only the registered operational property that a learned model of the system's own state dynamics improves held-out control. It does not establish consciousness, subjective self-awareness, general self-knowledge, intelligence, or universality."
+}
