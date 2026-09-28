@@ -1,6 +1,6 @@
 {
   "id":"DOL-E010",
-  "status":"PREREGISTERED_NOT_RUN",
+  "status":"EXECUTED_PASS",
   "level":"L6",
   "purpose":"Test future-dependent multi-step action selection with internally consistent reward timing against a matched myopic controller.",
   "environment":{
