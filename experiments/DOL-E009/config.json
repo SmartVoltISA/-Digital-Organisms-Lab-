@@ -1,6 +1,6 @@
 {
   "id": "DOL-E009",
-  "status": "PREREGISTERED_NOT_RUN",
+  "status": "EXECUTED_INCONCLUSIVE",
   "level": "L6",
   "purpose": "Test future-dependent multi-step action selection against a matched myopic controller.",
   "environment": {
