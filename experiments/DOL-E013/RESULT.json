@@ -1,0 +1,23 @@
+{
+  "id":"DOL-E013",
+  "status":"EXECUTED",
+  "decision":"PASS",
+  "n":20000,
+  "results":{
+    "mean_step_reward":{
+      "self":-0.14732180472911047,
+      "reactive":-0.19103861714009193,
+      "oracle":-0.13125000000000003
+    },
+    "self_model_gap":0.04371681241098146,
+    "prediction_rmse":0.04997831274435184,
+    "oracle_gap":0.01607180472911044
+  },
+  "criteria":{
+    "reward_pass":true,
+    "gap_pass":false,
+    "rmse_pass":true,
+    "oracle_gap_pass":true
+  },
+  "interpretation":"The learned self-dynamics model predicts held-out next state accurately and performs close to the oracle, but it does not meet the preregistered 0.20 advantage over the reactive controller. L8 is not established by this experiment."
+}
