@@ -1,7 +1,9 @@
 # DOL-E005 — Synthetic memory under matched present state
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — FAIL**
+
+The locked preregistered test was run for 100 seeds. See `RUN_LOG.md` and `RESULT.json`.
 
 ## Complexity target
 **L4 — Memory**
