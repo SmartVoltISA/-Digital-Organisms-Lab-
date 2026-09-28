@@ -18,3 +18,4 @@
 - DOL-E010 — synthetic future-dependent planning; executed, PASS (planning return 8.0 vs myopic 1.0; all preregistered criteria pass).\n
 - DOL-E011 — synthetic rule induction and held-out representation transformation; executed, PASS (5000 held-out cases; all preregistered criteria pass).\n
 - DOL-E012 — self-model test; not executed because method-check found unmatched disturbance streams.\n- DOL-E013 — self-model under matched disturbances; executed, FAIL (accurate prediction but self-model advantage threshold not met).\n
+- DOL-E014 — organism-specific self-model causal control; executed, FAIL (damaged model unexpectedly outperformed intact model).\n- DOL-E015 — organism-specific self-model at held-out decision boundary; executed, PASS (100% vs 50% reactive; 0% damaged; all criteria pass).\n
