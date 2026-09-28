@@ -1,6 +1,6 @@
 {
   "id":"DOL-E013",
-  "status":"PREREGISTERED_NOT_RUN",
+  "status":"EXECUTED_FAIL",
   "level":"L8",
   "purpose":"Test whether a learned model of the system's own next-state dynamics improves held-out control against a matched reactive controller under identical disturbances.",
   "system":{"state":"energy e in [0,10]","actions":[-1,0,1],"dynamics":"e_next = clip(e + 0.8*a - 0.3 + drift + noise, 0, 10)","noise_sd":0.05,"drift_values":[-0.2,0.2]},
