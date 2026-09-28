@@ -1,7 +1,7 @@
 # DOL-E009 — Synthetic future-dependent planning
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — INCONCLUSIVE**
 
 ## Complexity target
 **L6 — Planning**
