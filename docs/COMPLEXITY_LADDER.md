@@ -28,7 +28,7 @@ The ladder defines experimentally distinguishable capabilities for comparing dig
 - L0: demonstrated by DOL-E000.
 - L1: demonstrated by DOL-E000.
 - L2: demonstrated synthetically by DOL-E002; independent relation evidence exists in RELATION-LAB and Ω-Lab.
-- L3: demonstrated synthetically by DOL-E004.\n- L4: demonstrated synthetically by DOL-E007 under the operational definition above; E005/E006 remain failed threshold/persistence experiments.\n- L5: demonstrated synthetically by DOL-E008 under the one-step goal-directed operational definition.\n- L6+: not yet established by a common DOL protocol.
+- L3: demonstrated synthetically by DOL-E004.\n- L4: demonstrated synthetically by DOL-E007 under the operational definition above; E005/E006 remain failed threshold/persistence experiments.\n- L5: demonstrated synthetically by DOL-E008 under the one-step goal-directed operational definition.\n- L6: demonstrated synthetically by DOL-E010 under the registered future-dependent planning test; E009 remains inconclusive due protocol timing inconsistency.\n- L7+: not yet established by a common DOL protocol.
 
 ## Next falsification target
 L6 planning must be tested where the locally best action differs from the action with the best multi-step outcome, against a matched myopic control.
