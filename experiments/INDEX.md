@@ -15,3 +15,4 @@
 - DOL-E007 — synthetic memory detectability without absolute-unit threshold; executed, PASS (100/100 directional, preregistered statistical test and controls pass).\n
 - DOL-E008 — synthetic one-step goal-directed action selection; executed, PASS (2000 decisions; all preregistered decision criteria pass).\n
 - DOL-E009 — synthetic planning test; executed, INCONCLUSIVE due preregistered horizon/reward-timing inconsistency.\n
+- DOL-E010 — synthetic future-dependent planning; executed, PASS (planning return 8.0 vs myopic 1.0; all preregistered criteria pass).\n
