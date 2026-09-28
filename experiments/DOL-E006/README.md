@@ -1,7 +1,9 @@
 # DOL-E006 — Synthetic memory persistence curve
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — FAIL**
+
+The preregistered persistence-curve test was executed for 100 seeds. See `RUN_LOG.md` and `RESULT.json`.
 
 ## Complexity target
 **L4 — Memory persistence**
