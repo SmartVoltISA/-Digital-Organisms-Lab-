@@ -28,7 +28,12 @@ The ladder defines experimentally distinguishable capabilities for comparing dig
 - L0: demonstrated by DOL-E000.
 - L1: demonstrated by DOL-E000.
 - L2: demonstrated synthetically by DOL-E002; independent relation evidence exists in RELATION-LAB and Ω-Lab.
-- L3: demonstrated synthetically by DOL-E004.\n- L4: demonstrated synthetically by DOL-E007 under the operational definition above; E005/E006 remain failed threshold/persistence experiments.\n- L5: demonstrated synthetically by DOL-E008 under the one-step goal-directed operational definition.\n- L6: demonstrated synthetically by DOL-E010 under the registered future-dependent planning test; E009 remains inconclusive due protocol timing inconsistency.\n- L7: demonstrated synthetically by DOL-E011 under the registered held-out rule-induction test.\n- L8: demonstrated synthetically by DOL-E015 under the registered organism-specific self-model and model-damage test; E013/E014 remain failed L8 experiments.
+- L3: demonstrated synthetically by DOL-E004.
+- L4: demonstrated synthetically by DOL-E007 under the operational definition above; E005/E006 remain failed threshold/persistence experiments.
+- L5: demonstrated synthetically by DOL-E008 under the one-step goal-directed operational definition.
+- L6: demonstrated synthetically by DOL-E010 under the registered future-dependent planning test; E009 remains inconclusive due protocol timing inconsistency.
+- L7: demonstrated synthetically by DOL-E011 under the registered held-out rule-induction test.
+- L8: demonstrated synthetically by DOL-E015 under the registered organism-specific self-model and model-damage test; E013/E014 remain failed L8 experiments.
 
 ## Next falsification target
 L8 is currently demonstrated synthetically by E015. The next target is not a new ladder level: audit cross-model transfer of the existing operational tests, beginning with the preregistered c302 relation test E003. Any new capability level must be defined and preregistered before use.
