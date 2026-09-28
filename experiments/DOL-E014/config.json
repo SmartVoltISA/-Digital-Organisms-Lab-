@@ -1,6 +1,6 @@
 {
   "id":"DOL-E014",
-  "status":"PREREGISTERED_NOT_RUN",
+  "status":"EXECUTED_FAIL",
   "level":"L8",
   "purpose":"Test whether an organism-specific learned self-dynamics model causally improves held-out control, including an intervention that damages the self-model.",
   "organism":{"latent_state":"energy e in [0,10]","self_parameter":"actuator_gain g=0.55","actions":[-1,0,1],"dynamics":"e_next = clip(e + g*a - 0.2 + drift + noise, 0, 10)","noise_sd":0.03},
