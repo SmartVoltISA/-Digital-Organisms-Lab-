@@ -17,7 +17,6 @@ fails or output is missing.
 """
 from __future__ import annotations
 import argparse
-import csv
 import shutil
 import subprocess
 from pathlib import Path
@@ -43,11 +42,11 @@ def surgical_variant(src: Path, dst: Path, weight: str) -> None:
     tree.write(dst, encoding="utf-8", xml_declaration=True)
 
 def metric(path: Path) -> float:
-    rows = list(csv.reader(path.open(newline="")))
-    if len(rows) < 3:
+    lines = [line.strip() for line in path.read_text().splitlines() if line.strip()]
+    if len(lines) < 3:
         raise RuntimeError(f"Not enough output rows: {path}")
-    # c302 output: time, AIZL, AS2, ASHL, ...
-    data = [[float(x) for x in row] for row in rows[1:] if row]
+    # c302 .dat output is whitespace-delimited: time, AIZL, AS2, ASHL, ...
+    data = [[float(x) for x in line.split()] for line in lines[1:]]
     times = [r[0] for r in data]
     ash = [r[3] for r in data]
     base = [v for t, v in zip(times, ash) if 400 <= t < 500]
