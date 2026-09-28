@@ -1,0 +1,43 @@
+{
+  "id": "DOL-E005",
+  "status": "PREREGISTERED_NOT_RUN",
+  "level": "L4",
+  "model": {
+    "x_next": "0.05*x + 0.4*e + 0.005*m",
+    "m_next": "0.995*m + 0.05*clip(e,-1,1)",
+    "y": "x",
+    "noise_sd": 0.0001
+  },
+  "schedule": {
+    "baseline_steps": 50,
+    "cue_steps": 20,
+    "washout_steps": 150,
+    "probe_steps": 10,
+    "cue_A": 1,
+    "cue_B": -1,
+    "probe_environment": 0.2
+  },
+  "controls": {
+    "erase": "set x=0,m=0 before identical probe",
+    "sham": "e=0 during cue interval; then washout and identical probe",
+    "alignment": "set x=0 before probe; do not modify m",
+    "matched_noise": true
+  },
+  "seeds": {
+    "start": 1000,
+    "count": 100
+  },
+  "criteria": {
+    "memory_effect_min": 0.1,
+    "per_seed_direction_fraction_min": 0.95,
+    "erase_residual_ratio_max": 0.1,
+    "sham_ratio_max": 0.1
+  },
+  "metrics": {
+    "primary": "mean(abs(R_A-R_B))",
+    "R_A": "mean(abs(x) during A probe)",
+    "R_B": "mean(abs(x) during B probe)",
+    "erase_ratio": "erase_effect/un_erased_effect",
+    "sham_ratio": "sham_effect/un_erased_effect"
+  }
+}
