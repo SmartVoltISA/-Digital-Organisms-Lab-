@@ -13,3 +13,4 @@
 - DOL-E006 — synthetic L4 memory persistence curve; executed, FAIL (effect threshold not met; monotonic persistence observed).
 
 - DOL-E007 — synthetic memory detectability without absolute-unit threshold; executed, PASS (100/100 directional, preregistered statistical test and controls pass).\n
+- DOL-E008 — synthetic one-step goal-directed action selection; executed, PASS (2000 decisions; all preregistered decision criteria pass).\n
