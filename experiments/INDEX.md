@@ -7,3 +7,5 @@
 Результаты не редактируются задним числом. Исправления создают новую версию.
 
 - DOL-E003 — c302 AIZL↔ASHL reversible electrical relation ablation; preregistered, not yet run.
+
+- DOL-E004 — synthetic L3 adaptation with persistence and reversal controls; executed, PASS.
