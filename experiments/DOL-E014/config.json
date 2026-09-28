@@ -1,0 +1,36 @@
+{
+  "id":"DOL-E014",
+  "status":"PREREGISTERED_NOT_RUN",
+  "level":"L8",
+  "purpose":"Test whether an organism-specific learned self-dynamics model causally improves held-out control, including an intervention that damages the self-model.",
+  "organism":{"latent_state":"energy e in [0,10]","self_parameter":"actuator_gain g=0.55","actions":[-1,0,1],"dynamics":"e_next = clip(e + g*a - 0.2 + drift + noise, 0, 10)","noise_sd":0.03},
+  "objective":"reward = -abs(e_next-5) - 0.05*abs(a)",
+  "training":{"episodes":300,"steps_per_episode":30,"drift":0.2,"initial_energy_values":[3,5,7]},
+  "held_out":{"episodes":1000,"steps_per_episode":30,"drift":-0.2,"initial_energy_values":[2,4,6,8]},
+  "policies":{
+    "self_model":"learn organism-specific gain g_hat and bias from training action/state transitions; choose action maximizing predicted next-state reward",
+    "reactive":"fixed threshold controller based only on current e: +1 if e<4.5, -1 if e>5.5, else 0",
+    "damaged_self_model":"same learned policy but replace g_hat with registered generic gain 1.0 at evaluation",
+    "oracle":"true g and true transition model; positive control"
+  },
+  "controls":{
+    "same_initial_states":true,
+    "same_noise_sequences":true,
+    "held_out_drift":true,
+    "organism_specific_parameter":true,
+    "model_damage_intervention":true
+  },
+  "metrics":{
+    "primary":"self_model mean held-out reward minus reactive reward",
+    "secondary":"prediction_rmse",
+    "causal_drop":"intact_self_model_reward - damaged_self_model_reward",
+    "oracle_gap":"oracle_reward - intact_self_model_reward"
+  },
+  "criteria":{
+    "self_model_gap_min":0.20,
+    "prediction_rmse_max":0.20,
+    "causal_drop_min":0.15,
+    "oracle_gap_max":0.30
+  },
+  "interpretation_rule":"PASS establishes only that an organism-specific model of its own action-state dynamics causally improves held-out control in this synthetic task. It does not establish consciousness, subjective self-awareness, general self-knowledge, intelligence, or universality."
+}
