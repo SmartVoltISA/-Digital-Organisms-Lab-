@@ -1,0 +1,38 @@
+{
+  "id":"DOL-E011",
+  "status":"PREREGISTERED_NOT_RUN",
+  "level":"L7",
+  "purpose":"Test whether a synthetic system can derive a transformation rule from examples and apply it to held-out inputs, outperforming exact-example lookup.",
+  "representation":"3x3 binary grids",
+  "rule_family":["identity","rotate90","rotate180","mirror_horizontal","mirror_vertical","invert"],
+  "tasks":{
+    "train_examples_per_task":3,
+    "test_examples_per_task":5,
+    "tasks":1000,
+    "held_out_condition":"test input grids are not present among training inputs; the transformation rule is the same across train and test examples"
+  },
+  "policies":{
+    "reasoner":"enumerate the registered rule family, retain rules consistent with all training pairs, then apply the uniquely identified rule to each held-out test input",
+    "lookup":"return the memorized output only when the exact test input appeared in training; otherwise output the registered default grid",
+    "random":"sample a registered rule uniformly and apply it to test input"
+  },
+  "controls":{
+    "same_rule_family":true,
+    "exact_input_disjoint_train_test":true,
+    "held_out_inputs":true,
+    "negative_control":"lookup baseline",
+    "positive_control":"reasoner with known rule family"
+  },
+  "metrics":{
+    "primary":"exact grid accuracy on held-out test inputs",
+    "secondary":"fraction of tasks with all five held-out outputs correct",
+    "control_gap":"reasoner_accuracy - lookup_accuracy"
+  },
+  "criteria":{
+    "reasoner_accuracy_min":0.95,
+    "all_test_correct_task_fraction_min":0.90,
+    "control_gap_min":0.80,
+    "lookup_accuracy_max":0.10
+  },
+  "interpretation_rule":"PASS establishes only the registered representation-transformation and held-out rule-application property. It does not establish general reasoning, intelligence, cognition, self-model, biological equivalence, or universality."
+}
