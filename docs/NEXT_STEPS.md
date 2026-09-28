@@ -1,14 +1,15 @@
 # Next Steps
 
-1. Найти и зафиксировать воспроизводимый источник C. elegans.
-2. Проверить лицензию и формат модели.
-3. Сделать адаптер без изменения исходной модели.
-4. Запустить локально.
-5. Получить baseline поведения.
-6. Добавить количественные метрики.
-7. Сравнить модель с опубликованными наблюдениями.
-8. Зафиксировать текущую Complexity Ladder L0–L8 и Cross-Model Comparison Protocol.
-9. Выполнить preregistered c302 C2-тест E003, если среда позволяет; иначе сохранить INCONCLUSIVE/NOT RUN без подмены.
-10. После E003 проверить переносимость уже существующих operational tests между независимыми моделями.
-11. Новые уровни не вводить без отдельного определения и preregistration.
-12. SPACE остаётся вне DOL и не изменяется этим проектом.
+## Current priority
+
+1. Execute the preregistered c302 relation test DOL-E003 if the simulator/runtime becomes available.
+2. If execution remains unavailable, preserve NOT RUN/INCONCLUSIVE status and record the exact environment limitation.
+3. After E003, test transfer of existing operational protocols across independent substrates without changing their definitions.
+4. Complete missing historical provenance artifacts where original execution data exists.
+5. Add HYP-ID, seed/code hash, command, and run-log requirements consistently to every new preregistration.
+6. Define any future L9+ capability only after an explicit operational definition and preregistration.
+7. Keep SPACE outside DOL; no SPACE changes are part of this roadmap.
+
+## Current synthetic ladder
+
+L0–L8 are currently demonstrated by E000, E002, E004, E007, E008, E010, E011, and E015 respectively, subject to the scope and limitations documented in the Complexity Ladder and Repository Audit.
