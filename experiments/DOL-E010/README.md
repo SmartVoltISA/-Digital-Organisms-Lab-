@@ -1,7 +1,7 @@
 # DOL-E010 — Synthetic future-dependent planning, corrected timing
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — PASS**
 
 ## Complexity target
 **L6 — Planning**
