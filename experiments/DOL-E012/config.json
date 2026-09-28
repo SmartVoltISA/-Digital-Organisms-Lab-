@@ -1,0 +1,50 @@
+{
+  "id":"DOL-E012",
+  "status":"PREREGISTERED_NOT_RUN",
+  "level":"L8",
+  "purpose":"Test whether a learned model of the system's own next-state dynamics improves held-out control compared with matched controls that do not use self-state prediction.",
+  "system":{
+    "state":"energy e in [0,10]",
+    "actions":[-1,0,1],
+    "dynamics":"e_next = clip(e + 0.8*a - 0.3 + drift + noise, 0, 10)",
+    "noise_sd":0.05,
+    "drift_values":[-0.2,0.2]
+  },
+  "objective":"keep energy near target 5 while minimizing action magnitude; reward = -abs(e_next-5) - 0.1*abs(a)",
+  "training":{
+    "episodes":200,
+    "steps_per_episode":20,
+    "drift":0.2,
+    "initial_energy":5.0
+  },
+  "held_out":{
+    "episodes":1000,
+    "steps_per_episode":20,
+    "drift":-0.2,
+    "initial_energy_values":[2,4,6,8]
+  },
+  "policies":{
+    "self_model":"fit linear next-state model e_next = beta0 + beta1*e + beta2*a from training trajectories; at each held-out step predict e_next for all actions and choose action maximizing predicted reward",
+    "reactive":"choose action using current observed e only with a fixed registered threshold controller; no learned self-dynamics model",
+    "oracle":"use true transition dynamics; positive control only"
+  },
+  "controls":{
+    "held_out_drift":true,
+    "held_out_initial_energy":true,
+    "same_noise_sequences":true,
+    "reactive_no_self_prediction":true,
+    "oracle_positive_control":true
+  },
+  "metrics":{
+    "primary":"mean held-out reward",
+    "secondary":"self_model_gap = self_model_reward - reactive_reward",
+    "prediction_rmse":"RMSE of one-step self-state prediction on held-out trajectories"
+  },
+  "criteria":{
+    "self_model_reward_min":-1.0,
+    "self_model_gap_min":0.20,
+    "prediction_rmse_max":0.35,
+    "oracle_gap_max":0.50
+  },
+  "interpretation_rule":"PASS establishes only the registered operational property that a learned model of the system's own state dynamics improves held-out control. It does not establish consciousness, subjective self-awareness, general self-knowledge, intelligence, or universality."
+}
