@@ -1,6 +1,6 @@
 {
   "id":"DOL-E011",
-  "status":"PREREGISTERED_NOT_RUN",
+  "status":"EXECUTED_PASS",
   "level":"L7",
   "purpose":"Test whether a synthetic system can derive a transformation rule from examples and apply it to held-out inputs, outperforming exact-example lookup.",
   "representation":"3x3 binary grids",
