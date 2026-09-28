@@ -1,0 +1,26 @@
+{
+  "id":"DOL-E014",
+  "status":"EXECUTED",
+  "decision":"FAIL",
+  "n":30000,
+  "results":{
+    "mean_step_reward":{
+      "self":-0.6677068415692811,
+      "reactive":-0.8128309313310007,
+      "damaged":-0.32472722003927545,
+      "oracle":-0.4340073204450382
+    },
+    "learned_gain":0.540912491392464,
+    "prediction_rmse":0.4027319156580134,
+    "self_model_gap":0.14512408976171964,
+    "causal_drop":-0.3429796215300056,
+    "oracle_gap":0.23369952112424286
+  },
+  "criteria":{
+    "self_model_gap_pass":false,
+    "prediction_rmse_pass":false,
+    "causal_drop_pass":false,
+    "oracle_gap_pass":true
+  },
+  "interpretation":"The learned self-model did not satisfy the preregistered causal-control criteria. The damaged model unexpectedly outperformed the intact model, so E014 does not establish L8."
+}
