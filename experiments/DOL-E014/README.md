@@ -1,7 +1,7 @@
 # DOL-E014 — Causal organism-specific self-model
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — FAIL**
 
 ## Complexity target
 **L8 — Self-model**
