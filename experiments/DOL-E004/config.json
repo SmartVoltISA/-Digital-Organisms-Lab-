@@ -1,0 +1,54 @@
+{
+  "id": "DOL-E004",
+  "status": "PREREGISTERED_NOT_RUN",
+  "level": "L3",
+  "model": {
+    "x_next": "0.8*x + 0.6*e - 0.4*a",
+    "a_next": "0.98*a + 0.08*clip(abs(e)-0.5,0,1)",
+    "y": "x - 0.5*a"
+  },
+  "schedule": {
+    "baseline": {
+      "steps": 50,
+      "environment": 0
+    },
+    "training": {
+      "cycles": 20,
+      "pulse_steps": 5,
+      "pulse_value": 1,
+      "gap_steps": 5
+    },
+    "washout": {
+      "steps": 50,
+      "environment": 0
+    },
+    "probe": {
+      "steps": 10,
+      "environment": 0.5
+    },
+    "reversal": {
+      "cycles": 20,
+      "pulse_steps": 5,
+      "pulse_value": -1,
+      "gap_steps": 5
+    },
+    "post_reversal_washout": {
+      "steps": 50,
+      "environment": 0
+    },
+    "post_reversal_probe": {
+      "steps": 10,
+      "environment": 0.5
+    }
+  },
+  "seeds": {
+    "start": 1000,
+    "count": 100
+  },
+  "criteria": {
+    "adaptation_index_min": 0.2,
+    "no_training_abs_index_max": 0.05,
+    "reversal_index_max": -0.1,
+    "per_seed_direction_fraction_min": 0.95
+  }
+}
