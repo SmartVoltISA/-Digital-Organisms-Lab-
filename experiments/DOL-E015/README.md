@@ -1,7 +1,7 @@
 # DOL-E015 — Organism-specific self-model controls held-out action selection
 
 ## Status
-**PREREGISTERED — NOT RUN**
+**EXECUTED — PASS**
 
 ## Complexity target
 **L8 — Self-model**
