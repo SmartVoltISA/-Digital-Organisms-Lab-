@@ -1,0 +1,46 @@
+{
+  "id": "DOL-E003",
+  "status": "PREREGISTERED_NOT_RUN",
+  "external_model": {
+    "repository": "openworm/c302",
+    "commit": "6cd861f8ca4d3241ee9cf4627884caa930dab53c",
+    "file": "examples/c302_C1_Syns.net.nml",
+    "model_version": "0.12.0"
+  },
+  "relation": {
+    "source": "AIZL",
+    "target": "ASHL",
+    "type": "bidirectional_electrical",
+    "conductance": "0.00052 nS"
+  },
+  "conditions": {
+    "ON": "both projection weights 1.0",
+    "CUT": "both projection weights 0.0",
+    "RESTORE": "both projection weights 1.0"
+  },
+  "primary_perturbation": {
+    "source": "AIZL",
+    "amplitude": "1 pA",
+    "delay": "500 ms",
+    "duration": "800 ms"
+  },
+  "negative_control": {
+    "source": "AS2",
+    "target": "ASHL",
+    "amplitude": "1 pA",
+    "delay": "500 ms",
+    "duration": "800 ms"
+  },
+  "simulation": {
+    "duration_ms": 3600,
+    "dt_ms": 0.05
+  },
+  "primary_metric": "integral(abs(V_ASHL(t)-V_ASHL_pre) dt) over 500-1300 ms",
+  "criteria": {
+    "cut_over_on_max": 0.1,
+    "restore_over_on_min": 0.9,
+    "restore_over_on_max": 1.1,
+    "primary_over_negative_control_min": 3
+  },
+  "decision": "PASS only if all preregistered criteria are satisfied; otherwise FAIL or INCONCLUSIVE as specified in README"
+}
