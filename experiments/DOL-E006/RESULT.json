@@ -1,0 +1,78 @@
+{
+  "id": "DOL-E006",
+  "status": "EXECUTED",
+  "decision": "FAIL",
+  "n": 100,
+  "seed_range": "1000-1099",
+  "delays": [
+    0,
+    20,
+    50,
+    100,
+    200,
+    500,
+    1000
+  ],
+  "results": {
+    "0": {
+      "memory_effect": 0.009767536006866038,
+      "retention": 1,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    },
+    "20": {
+      "memory_effect": 0.008835815438270708,
+      "retention": 0.9046104802746178,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    },
+    "50": {
+      "memory_effect": 0.007602195925763935,
+      "retention": 0.7783125570686417,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    },
+    "100": {
+      "memory_effect": 0.005916884550318136,
+      "retention": 0.6057704364907275,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    },
+    "200": {
+      "memory_effect": 0.0035842737367114564,
+      "retention": 0.36695782172616614,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    },
+    "500": {
+      "memory_effect": 0.0007967560937650043,
+      "retention": 0.08157186144027816,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    },
+    "1000": {
+      "memory_effect": 0.00006499287768229334,
+      "retention": 0.006653968578831646,
+      "fraction_A_gt_B": 1,
+      "erase_ratio": 0,
+      "sham_ratio": 0
+    }
+  },
+  "memory_effect_at_zero": 0.009767536006866038,
+  "monotonic": true,
+  "erase_all_pass": true,
+  "sham_all_pass": true,
+  "criteria": {
+    "zero_effect_pass": false,
+    "monotonic_pass": true,
+    "erase_pass": true,
+    "sham_pass": true
+  },
+  "interpretation": "A reproducible monotonic persistence curve is observed, but the preregistered absolute effect threshold of 0.10 is not met. L4 is not established."
+}
