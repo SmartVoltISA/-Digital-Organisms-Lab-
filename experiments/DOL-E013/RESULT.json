@@ -1,7 +1,7 @@
 {
   "id":"DOL-E013",
   "status":"EXECUTED",
-  "decision":"PASS",
+  "decision":"FAIL",
   "n":20000,
   "results":{
     "mean_step_reward":{
