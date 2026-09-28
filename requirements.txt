@@ -1,0 +1,2 @@
+# Core laboratory has no mandatory third-party dependencies yet.
+# Organism adapters may declare their own requirements.
