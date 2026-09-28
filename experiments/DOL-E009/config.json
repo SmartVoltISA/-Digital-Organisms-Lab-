@@ -1,0 +1,44 @@
+{
+  "id": "DOL-E009",
+  "status": "PREREGISTERED_NOT_RUN",
+  "level": "L6",
+  "purpose": "Test future-dependent multi-step action selection against a matched myopic controller.",
+  "environment": {
+    "states": ["START","TRAP","PATH","GOAL","FAIL"],
+    "actions": ["A","B","WAIT"],
+    "transition_rule": "At START: A gives immediate reward +1 and moves to TRAP; B gives reward 0 and moves to PATH. At PATH: WAIT gives 0 and remains PATH; B gives 0 and moves to GOAL. At GOAL: reward +4 and episode terminates. TRAP cannot reach GOAL within the horizon.",
+    "horizon": 3,
+    "discount": 1.0,
+    "objective": "sum of rewards over episode"
+  },
+  "policies": {
+    "planning": "choose action maximizing total future reward over the registered horizon using the known transition model",
+    "myopic": "choose action maximizing immediate reward only; ties resolved by registered action order A,B,WAIT",
+    "random": "uniform random action among valid actions"
+  },
+  "tasks": {
+    "episodes": 1000,
+    "start_state": "START"
+  },
+  "controls": {
+    "matched_environment": true,
+    "same_horizon": true,
+    "myopic_control": true,
+    "random_control": true,
+    "counterfactual_first_action": true
+  },
+  "metrics": {
+    "primary": "mean episode return",
+    "secondary": "fraction selecting B at START",
+    "planning_gap": "planning return - myopic return",
+    "goal_reach_fraction": "fraction of episodes reaching GOAL"
+  },
+  "criteria": {
+    "planning_return_min": 4.0,
+    "planning_gap_min": 3.0,
+    "planning_B_fraction_min": 0.95,
+    "myopic_B_fraction_max": 0.05,
+    "planning_goal_reach_min": 0.95
+  },
+  "interpretation_rule": "PASS establishes only the tested synthetic future-dependent action sequence property. It does not establish general planning, reasoning, intelligence, cognition, self-model, biological equivalence, or universality."
+}
