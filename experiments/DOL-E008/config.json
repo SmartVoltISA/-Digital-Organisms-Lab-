@@ -1,6 +1,6 @@
 {
   "id": "DOL-E008",
-  "status": "PREREGISTERED_NOT_RUN",
+  "status": "EXECUTED_PASS",
   "level": "L5",
   "purpose": "Test one-step goal-directed action selection against matched action alternatives.",
   "model": {
