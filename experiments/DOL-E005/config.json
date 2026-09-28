@@ -1,6 +1,6 @@
 {
   "id": "DOL-E005",
-  "status": "PREREGISTERED_NOT_RUN",
+  "status": "EXECUTED_FAIL",
   "level": "L4",
   "model": {
     "x_next": "0.05*x + 0.4*e + 0.005*m",
