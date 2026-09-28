@@ -1,171 +1,34 @@
 # Digital Organisms Complexity Ladder v1.0
 
 ## Purpose
+The ladder defines experimentally distinguishable capabilities for comparing digital organisms. It is a measurement framework, not a claim that the levels are sufficient for intelligence.
 
-Определить исследовательскую лестницу от минимальной динамической системы до архитектуры, в которой отдельно проверяются память, планирование и рассуждение.
+## Levels
+| Level | Capability | Minimum observable |
+|---|---|---|
+| L0 | Dynamic substrate | State changes reproducibly under fixed rules |
+| L1 | Reactive organism | Environment → state → action → feedback |
+| L2 | Relational organism | Controlled relation changes measurable cross-component response |
+| L3 | Adaptation | Response changes after experience and persists beyond the immediate stimulus |
+| L4 | Memory | Past state measurably changes later behavior under matched present conditions |
+| L5 | Goal-directed behavior | System selects actions that improve a pre-defined objective under alternatives |
+| L6 | Planning | Future-dependent action sequence outperforms matched myopic controls |
+| L7 | Reasoning | System derives/usefully transforms representations to solve held-out tasks |
+| L8 | Self-model | Predictions about its own state/actions improve held-out control or prediction |
 
-Это **не рейтинг организмов** и не утверждение, что более высокий уровень «лучше».
-Уровни описывают наличие проверяемых механизмов и наблюдаемых свойств.
+## Rules
+1. A level is not awarded from architecture alone.
+2. Each level requires a preregistered operational test and negative controls.
+3. Higher levels do not imply lower levels were implemented biologically.
+4. Passing a level in one model does not establish universality.
+5. Capability labels are descriptive, not rankings of organisms.
+6. Failed experiments remain part of the research history.
 
-## Core principle
+## Current DOL status
+- L0: demonstrated by DOL-E000.
+- L1: demonstrated by DOL-E000.
+- L2: demonstrated synthetically by DOL-E002; independent relation evidence exists in RELATION-LAB and Ω-Lab.
+- L3+: not yet established by a common DOL protocol.
 
-Не сравниваем «червя» и SPACE как равные объекты.
-
-Сравниваем, **какие свойства поведения требуют какого уровня организации**.
-
-```
-L0  Dynamic substrate
- ↓
-L1  Reactive organism
- ↓
-L2  Relational organism
- ↓
-L3  Adaptive organism
- ↓
-L4  Memory-bearing organism
- ↓
-L5  Goal-directed / planning organism
- ↓
-L6  Reasoning organism
- ↓
-L7  Meta-cognitive / self-modeling system
-```
-
-## L0 — Dynamic substrate
-
-State evolves according to fixed rules.
-
-Required observations:
-- state;
-- transition;
-- stability;
-- perturbation response.
-
-No claim of cognition.
-
-## L1 — Reactive organism
-
-Closed loop:
-
-`state → environment → action → feedback`
-
-Required properties:
-- measurable stimulus;
-- measurable response;
-- repeatability;
-- environment dependence.
-
-DOL-E000 is an engineering baseline for this layer.
-
-## L2 — Relational organism
-
-Behavior depends on structured relations between components.
-
-Required tests:
-- relation ON;
-- relation CUT;
-- relation RESTORED;
-- paired perturbation;
-- negative controls.
-
-Primary observable:
-
-`relation state → change in cross-component influence`
-
-This layer connects to the independently developed RELATION/Ω experimental methodology.
-
-## L3 — Adaptive organism
-
-The system changes its future response as a consequence of prior interaction.
-
-Required distinction:
-
-`state change ≠ adaptation`
-
-Adaptation requires:
-1. history-dependent response;
-2. controlled repeated exposure;
-3. changed future behavior;
-4. comparison against a history-free/control condition.
-
-## L4 — Memory-bearing organism
-
-A persistent internal state affects later behavior after the original stimulus is removed.
-
-Minimum test:
-
-`stimulus → internal change → stimulus removed → delayed probe`
-
-A memory claim requires:
-- retention interval;
-- probe;
-- control without retained state;
-- reproducible behavioral difference.
-
-## L5 — Goal-directed / planning organism
-
-The system selects actions with reference to a future state or objective.
-
-Required evidence:
-- explicit or inferable target state;
-- multiple available actions;
-- action sequence;
-- comparison against reactive policy;
-- cost/time or other fixed objective;
-- counterfactual or blocked-path test where possible.
-
-Planning must not be inferred merely from complex trajectories.
-
-## L6 — Reasoning organism
-
-The system can transform internal representations to derive an action or conclusion not reducible to a direct stimulus-response mapping.
-
-Required tests should include:
-- novel combinations;
-- withheld information;
-- distractors;
-- counterfactual task;
-- transfer to structurally related but unseen cases.
-
-A language model connected to the system does not by itself prove that the organism possesses the corresponding reasoning mechanism.
-
-## L7 — Meta-cognitive / self-modeling system
-
-The system maintains a usable model of aspects of its own state, uncertainty, limits, or operation and this model changes behavior.
-
-Required evidence:
-- self-referential state representation;
-- measurable uncertainty or capability estimate;
-- intervention on the self-model;
-- behavioral consequence;
-- external validation.
-
-## Important separation
-
-The ladder is about **properties to test**, not labels to assign.
-
-A system may implement a property without implementing every lower-level mechanism in the same way.
-
-Conversely, having an architectural component named "memory", "planning", or "reasoning" is not evidence that the corresponding behavioral property exists.
-
-## External control point
-
-c302 / C. elegans remains an **independent biological computational baseline**.
-
-It is not connected to SPACE.
-
-Its role is to provide a lower-complexity reference against which specific experimentally defined properties can be compared.
-
-## SPACE boundary
-
-SPACE is not modified by this document.
-
-If SPACE is later tested, it enters only through the same external experimental interface and only for preregistered questions.
-
-## Research question
-
-The central question is:
-
-> At which added organizational layer does a new behavioral property become experimentally detectable, and which mechanism is necessary for that property?
-
-This converts "building a mind" from an architectural claim into a sequence of falsifiable comparisons.
+## Next falsification target
+L3 adaptation must be tested with matched present inputs, pre/post experience, reversal/generalization controls, and persistence measured after the inducing experience is removed.
