@@ -28,7 +28,7 @@ The ladder defines experimentally distinguishable capabilities for comparing dig
 - L0: demonstrated by DOL-E000.
 - L1: demonstrated by DOL-E000.
 - L2: demonstrated synthetically by DOL-E002; independent relation evidence exists in RELATION-LAB and Ω-Lab.
-- L3: demonstrated synthetically by DOL-E004.\n- L4: demonstrated synthetically by DOL-E007 under the operational definition above; E005/E006 remain failed threshold/persistence experiments.\n- L5+: not yet established by a common DOL protocol.
+- L3: demonstrated synthetically by DOL-E004.\n- L4: demonstrated synthetically by DOL-E007 under the operational definition above; E005/E006 remain failed threshold/persistence experiments.\n- L5: demonstrated synthetically by DOL-E008 under the one-step goal-directed operational definition.\n- L6+: not yet established by a common DOL protocol.
 
 ## Next falsification target
 L3 adaptation must be tested with matched present inputs, pre/post experience, reversal/generalization controls, and persistence measured after the inducing experience is removed.
