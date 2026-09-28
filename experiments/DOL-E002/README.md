@@ -61,7 +61,7 @@ These criteria are fixed for this replication run.
 | Mean negative-control response | 0.51776521 |
 | CUT / ON | 0.000000 |
 | RESTORE / ON | 1.000000 |
-| Mean ON / negative-control | 9.077* |
+| Mean ON / negative-control | 9.07893576* |
 | Seeds ON > 3× negative control | 100/100 = 1.000 |
 
 *Ratio of means. The per-seed ON/negative-control ratio had 5th/50th/95th percentiles of 4.331 / 9.542 / 23.397.
