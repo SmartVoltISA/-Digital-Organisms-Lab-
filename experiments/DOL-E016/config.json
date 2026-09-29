@@ -1,0 +1,55 @@
+{
+  "id": "DOL-E016",
+  "status": "PREREGISTERED_NOT_RUN",
+  "type": "minimum_organism_description",
+  "pilot_target": "DOL-E004",
+  "capability_target": "L3",
+  "hypothesis": {
+    "H0": "Reducing executable description does not produce measurable loss of the registered capability until a boundary is crossed.",
+    "H1": "A measurable description-length boundary exists below which the registered capability fails."
+  },
+  "locked_base": {
+    "experiment": "DOL-E004",
+    "config_path": "experiments/DOL-E004/config.json",
+    "model": {
+      "x_next": "0.8*x + 0.6*e - 0.4*a",
+      "a_next": "0.98*a + 0.08*clip(e,-1,1)",
+      "y": "x + 0.4*a",
+      "noise_sd": 0.005
+    },
+    "seeds": {"start": 1000, "count": 100}
+  },
+  "primary_metric": "canonical_description_bytes",
+  "secondary_metrics": [
+    "state_variable_count",
+    "parameter_count",
+    "transition_term_count",
+    "runtime_peak_state_count",
+    "execution_time_seconds"
+  ],
+  "preservation_criteria": {
+    "adaptation_index_min": 0.2,
+    "no_training_abs_index_max": 0.05,
+    "reversal_recovery_index_min": 0.5,
+    "per_seed_direction_fraction_min": 0.95
+  },
+  "candidate_policy": {
+    "operators": [
+      "parameter_quantization",
+      "inactive_precision_removal",
+      "equation_simplification",
+      "state_variable_elimination"
+    ],
+    "candidate_sequence": "fixed_before_execution",
+    "no_post_result_tuning": true
+  },
+  "controls": [
+    "exact_M0_reproduction",
+    "serialization_invariance",
+    "packaging_only_sham",
+    "fixed_seeds",
+    "fixed_schedule",
+    "locked_candidate_sequence"
+  ],
+  "decision_rule": "L_star is the minimum measured canonical description length among tested candidates preserving all registered criteria; if no failure boundary is bracketed, report unresolved."
+}
