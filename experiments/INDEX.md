@@ -30,3 +30,4 @@
 
 - DOL-E014 — organism-specific self-model causal control; executed, FAIL (damaged model unexpectedly outperformed intact model).
 - DOL-E015 — organism-specific self-model at held-out decision boundary; executed, PASS (100% vs 50% reactive; 0% damaged; all criteria pass).
+- DOL-E016 — minimum organism description (MOD) pilot on E004; preregistered, not yet run. Measures the minimum canonical executable description preserving a fixed behavioral capability profile; orthogonal to L0–L8.
